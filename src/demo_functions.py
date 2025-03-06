@@ -47,3 +47,7 @@ def demo_reverse(lst: List):
 
 def demo_find_first(lst: List):
     print("First index of 'c':", lst.find_first('c'))
+
+
+def demo_find_last(lst: List):
+    print("Last index of 'c':", lst.find_last('c'))

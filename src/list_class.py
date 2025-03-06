@@ -40,5 +40,11 @@ class List:
         except ValueError:
             return -1
 
+    def find_last(self, element: chr) -> int:
+        for i in range(len(self.data) - 1, -1, -1):
+            if self.data[i] == element:
+                return i
+        return -1
+
     def __repr__(self):
         return f"{self.data}"
