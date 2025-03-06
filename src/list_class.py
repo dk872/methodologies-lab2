@@ -34,5 +34,11 @@ class List:
     def reverse(self) -> None:
         self.data.reverse()
 
+    def find_first(self, element: chr) -> int:
+        try:
+            return self.data.index(element)
+        except ValueError:
+            return -1
+
     def __repr__(self):
         return f"{self.data}"

@@ -1,7 +1,8 @@
 from list_class import List
 from demo_functions import (
     demo_append, demo_insert, demo_length, demo_delete,
-    demo_delete_all, demo_get, demo_clone, demo_reverse)
+    demo_delete_all, demo_get, demo_clone, demo_reverse,
+    demo_find_first)
 
 
 def main():
@@ -16,6 +17,7 @@ def main():
     demo_get(lst)
     demo_clone(lst)
     demo_reverse(lst)
+    demo_find_first(lst)
 
 
 if __name__ == "__main__":

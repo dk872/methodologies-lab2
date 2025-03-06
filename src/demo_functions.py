@@ -43,3 +43,7 @@ def demo_clone(lst: List):
 def demo_reverse(lst: List):
     lst.reverse()
     print("After reversing:", lst)
+
+
+def demo_find_first(lst: List):
+    print("First index of 'c':", lst.find_first('c'))
