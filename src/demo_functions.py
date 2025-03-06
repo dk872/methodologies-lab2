@@ -13,3 +13,8 @@ def demo_append(lst: List):
 def demo_insert(lst: List):
     lst.insert('x', 1)
     print("After inserting 'x' at index 1:", lst)
+
+
+def demo_length(lst: List):
+    length = lst.length()
+    print("The number of list items:", length)
