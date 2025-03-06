@@ -26,5 +26,10 @@ class List:
             raise IndexError("Index out of range")
         return self.data[index]
 
+    def clone(self) -> "List":
+        new_list = List()
+        new_list._data = self.data.copy()
+        return new_list
+
     def __repr__(self):
         return f"{self.data}"

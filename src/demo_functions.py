@@ -33,3 +33,8 @@ def demo_delete_all(lst: List):
 def demo_get(lst: List):
     element = lst.get(0)
     print("Element at index 0:", element)
+
+
+def demo_clone(lst: List):
+    cloned_list = lst.clone()
+    print("Cloned list:", cloned_list)
