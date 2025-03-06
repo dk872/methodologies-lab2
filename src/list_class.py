@@ -46,5 +46,8 @@ class List:
                 return i
         return -1
 
+    def extend(self, elements: "List") -> None:
+        self.data.extend(elements.data.copy())
+
     def __repr__(self):
         return f"{self.data}"

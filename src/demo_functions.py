@@ -51,3 +51,12 @@ def demo_find_first(lst: List):
 
 def demo_find_last(lst: List):
     print("Last index of 'c':", lst.find_last('c'))
+
+
+def demo_extend(lst: List):
+    another_list = List()
+    another_list.append('d')
+    another_list.append('e')
+    print("Another list:", another_list)
+    lst.extend(another_list)
+    print("After extending with another list:", lst)
