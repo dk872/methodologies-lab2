@@ -46,6 +46,9 @@ class List:
                 return i
         return -1
 
+    def clear(self) -> None:
+        self.data.clear()
+
     def extend(self, elements: "List") -> None:
         self.data.extend(elements.data.copy())
 

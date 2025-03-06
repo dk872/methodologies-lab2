@@ -53,6 +53,11 @@ def demo_find_last(lst: List):
     print("Last index of 'c':", lst.find_last('c'))
 
 
+def demo_clear(lst: List):
+    lst.clear()
+    print("After clearing the list:", lst)
+
+
 def demo_extend(lst: List):
     another_list = List()
     another_list.append('d')
