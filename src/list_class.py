@@ -18,5 +18,8 @@ class List:
             raise IndexError("Index out of range")
         return self.data.pop(index)
 
+    def delete_all(self, element: chr) -> None:
+        self.data = [e for e in self.data if e != element]
+
     def __repr__(self):
         return f"{self.data}"

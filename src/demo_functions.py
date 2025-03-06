@@ -23,3 +23,8 @@ def demo_length(lst: List):
 def demo_delete(lst: List):
     removed = lst.delete(0)
     print(f"Deleted element at index 0: {removed}. Result:", lst)
+
+
+def demo_delete_all(lst: List):
+    lst.delete_all('b')
+    print("After deleting all 'b':", lst)

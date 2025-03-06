@@ -1,6 +1,7 @@
 from list_class import List
 from demo_functions import (
-    demo_append, demo_insert, demo_length, demo_delete)
+    demo_append, demo_insert, demo_length, demo_delete,
+    demo_delete_all)
 
 
 def main():
@@ -11,6 +12,7 @@ def main():
     demo_insert(lst)
     demo_length(lst)
     demo_delete(lst)
+    demo_delete_all(lst)
 
 
 if __name__ == "__main__":
