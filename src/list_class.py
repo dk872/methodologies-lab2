@@ -21,5 +21,10 @@ class List:
     def delete_all(self, element: chr) -> None:
         self.data = [e for e in self.data if e != element]
 
+    def get(self, index: int) -> chr:
+        if not (0 <= index < len(self.data)):
+            raise IndexError("Index out of range")
+        return self.data[index]
+
     def __repr__(self):
         return f"{self.data}"

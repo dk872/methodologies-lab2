@@ -28,3 +28,8 @@ def demo_delete(lst: List):
 def demo_delete_all(lst: List):
     lst.delete_all('b')
     print("After deleting all 'b':", lst)
+
+
+def demo_get(lst: List):
+    element = lst.get(0)
+    print("Element at index 0:", element)
