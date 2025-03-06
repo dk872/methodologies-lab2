@@ -28,7 +28,7 @@ class List:
 
     def clone(self) -> "List":
         new_list = List()
-        new_list._data = self.data.copy()
+        new_list.data = self.data.copy()
         return new_list
 
     def reverse(self) -> None:
