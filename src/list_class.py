@@ -31,5 +31,8 @@ class List:
         new_list._data = self.data.copy()
         return new_list
 
+    def reverse(self) -> None:
+        self.data.reverse()
+
     def __repr__(self):
         return f"{self.data}"

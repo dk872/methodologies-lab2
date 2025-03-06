@@ -38,3 +38,8 @@ def demo_get(lst: List):
 def demo_clone(lst: List):
     cloned_list = lst.clone()
     print("Cloned list:", cloned_list)
+
+
+def demo_reverse(lst: List):
+    lst.reverse()
+    print("After reversing:", lst)
