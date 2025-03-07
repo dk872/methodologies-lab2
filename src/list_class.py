@@ -31,9 +31,30 @@ class List:
             new_node.next = self.head
 
     def insert(self, element: chr, index: int) -> None:
-        if not (0 <= index <= len(self.data)):
+        if index < 0 or index > self.length():
             raise IndexError("Index out of range")
-        self.data.insert(index, element)
+
+        new_node = Node(element)
+
+        if index == 0:
+            if not self.head:
+                self.head = new_node
+                self.head.next = self.head
+            else:
+                new_node.next = self.head
+                current = self.head
+                while current.next != self.head:
+                    current = current.next
+                current.next = new_node
+                self.head = new_node
+            return
+
+        current = self.head
+        for _ in range(index - 1):
+            current = current.next
+
+        new_node.next = current.next
+        current.next = new_node
 
     def delete(self, index: int) -> chr:
         if index < 0 or index >= self.length():

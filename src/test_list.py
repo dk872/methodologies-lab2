@@ -30,7 +30,7 @@ class TestList(unittest.TestCase):
         self.assertEqual(self.lst.get(0), 'a')
         self.assertEqual(self.lst.get(1), 'b')
 
-    '''def test_insert_empty(self):
+    def test_insert_empty(self):
         """Checks for insertion of an element into the correct position of an empty list."""
         self.lst.insert('b', 0)
         self.assertEqual(self.lst.get(0), 'b')
@@ -48,7 +48,7 @@ class TestList(unittest.TestCase):
     def test_insert_invalid_index(self):
         """Checks that an error occurs if the index is incorrect."""
         with self.assertRaises(IndexError):
-            self.lst.insert('x', 5)'''
+            self.lst.insert('x', 5)
 
     def test_delete_valid_index(self):
         """Checks for deletion of an element at a correct index."""
