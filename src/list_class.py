@@ -175,7 +175,15 @@ class List:
         self.head = None
 
     def extend(self, elements: "List") -> None:
-        self.data.extend(elements.data.copy())
+        if not elements.head:
+            return
+
+        current = elements.head
+        while True:
+            self.append(current.value)
+            current = current.next
+            if current == elements.head:
+                break
 
     def __repr__(self):
         return f"{self.data}"

@@ -218,7 +218,7 @@ class TestList(unittest.TestCase):
         self.lst.clear()
         self.assertEqual(self.lst.length(), 0)
 
-    '''def test_extend(self):
+    def test_extend(self):
         """Checks that a list is properly extended by another list and that changes
         to the second list do not affect the first."""
         another_list = List()
@@ -245,4 +245,4 @@ class TestList(unittest.TestCase):
 
         self.assertEqual(another_list.get(0), 'y')
         self.assertEqual(another_list.get(1), 'c')
-        self.assertEqual(another_list.get(2), 'd')'''
+        self.assertEqual(another_list.get(2), 'd')
