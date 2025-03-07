@@ -70,4 +70,33 @@ class TestListMethods(unittest.TestCase):
         self.lst.append('b')
         with self.assertRaises(IndexError):
             self.lst.delete(2)
-            
+
+    def test_delete_all_two_elements(self):
+        """Checks for deletion of all occurrences of two elements in a non-empty list."""
+        self.lst.append('a')
+        self.lst.append('b')
+        self.lst.append('a')
+        self.lst.delete_all('a')
+        self.assertEqual(self.lst.get(0), 'b')
+
+    def test_delete_all_one_element(self):
+        """Checks for deletion of one element in a non-empty list."""
+        self.lst.append('a')
+        self.lst.append('b')
+        self.lst.append('a')
+        self.lst.delete_all('b')
+
+        self.assertEqual(self.lst.get(0), 'a')
+        self.assertEqual(self.lst.get(1), 'a')
+
+    def test_delete_all_no_element(self):
+        """Checks for immutability of the list if no items to delete are found."""
+        self.lst.append('c')
+        self.lst.append('a')
+        self.lst.append('a')
+        self.lst.delete_all('b')
+
+        self.assertEqual(self.lst.get(0), 'c')
+        self.assertEqual(self.lst.get(1), 'a')
+        self.assertEqual(self.lst.get(2), 'a')
+        
