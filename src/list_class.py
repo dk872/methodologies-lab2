@@ -201,4 +201,17 @@ class List:
                 break
 
     def __repr__(self):
-        return f"{self.data}"
+        if self.head is None:
+            return "[]"
+
+        elements = []
+        current = self.head
+
+        while True:
+            elements.append(repr(current.value))
+            current = current.next
+            if current == self.head:
+                break
+
+        return "[" + " -> ".join(elements) + "]"
+
