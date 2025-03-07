@@ -217,4 +217,32 @@ class TestListMethods(unittest.TestCase):
         """Checks that nothing happens with an empty list."""
         self.lst.clear()
         self.assertEqual(self.lst.length(), 0)
-        
+
+    def test_extend(self):
+        """Checks that a list is properly extended by another list and that changes
+        to the second list do not affect the first."""
+        another_list = List()
+        another_list.append('x')
+        another_list.append('y')
+
+        self.lst.append('a')
+        self.lst.append('b')
+        self.lst.extend(another_list)
+
+        self.assertEqual(self.lst.get(0), 'a')
+        self.assertEqual(self.lst.get(1), 'b')
+        self.assertEqual(self.lst.get(2), 'x')
+        self.assertEqual(self.lst.get(3), 'y')
+
+        another_list.append('c')
+        another_list.append('d')
+        another_list.delete(0)
+
+        self.assertEqual(self.lst.get(0), 'a')
+        self.assertEqual(self.lst.get(1), 'b')
+        self.assertEqual(self.lst.get(2), 'x')
+        self.assertEqual(self.lst.get(3), 'y')
+
+        self.assertEqual(another_list.get(0), 'y')
+        self.assertEqual(another_list.get(1), 'c')
+        self.assertEqual(another_list.get(2), 'd')
