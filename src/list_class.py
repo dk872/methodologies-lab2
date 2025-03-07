@@ -37,9 +37,20 @@ class List:
         self.data = [e for e in self.data if e != element]
 
     def get(self, index: int) -> chr:
-        if not (0 <= index < len(self.data)):
+        if self.head is None:
             raise IndexError("Index out of range")
-        return self.data[index]
+
+        current = self.head
+        count = 0
+
+        while count < index:
+            current = current.next
+            count += 1
+
+            if current == self.head:
+                raise IndexError("Index out of range")
+
+        return current.value
 
     def clone(self) -> "List":
         new_list = List()
