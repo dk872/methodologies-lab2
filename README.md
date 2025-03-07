@@ -24,14 +24,9 @@ cd methodologies-lab2
     ```
     python3 --version
     ```
-  - Run the script:
+  - Run the script and see the result of executing the demo functions:
     ```
-    python3 main.py
-    ```
-  - Alternatively, make the script executable and run it directly:
-    ```
-    chmod +x main.py
-    ./main.py
+    python3 src/main.py
     ```
 
 - **On Windows:**
@@ -39,12 +34,35 @@ cd methodologies-lab2
     ```
     python --version
     ```
-  - Run the script and enter coefficients *manually*:
+  - Run the script and see the result of executing the demo functions:
     ```
-    python main.py
-    ```
-  - Or run the program *with the file* as an argument:
-    ```
-    python main.py <path-to-the-file>
+    python .\src\main.py
     ```
 
+## Running the tests
+This project has 28 different tests that verify the operation of methods for working with lists.
+
+- **On Linux:**
+  - Run the tests and see the result:
+    ```
+    python3 -m unittest discover src
+    ```
+
+- **On Windows:**
+  - Run the tests and see the result:
+    ```
+    python -m unittest discover src
+    ```
+
+## Commit with failed tests
+[link](https://github.com/dk872/methodologies-lab2/commit/4c5d334284eb43c87a5610f359315ea3d1526c55)
+
+## Conclusions
+This project demonstrates the implementations of a list based on built-in arrays/lists and circular linked list and highlights the importance of unit testing in maintaining software stability.
+
+Unit tests play a crucial role in software development by:
+  - **Ensuring code reliability**
+  - **Facilitating refactoring**
+  - **Improving Maintainability**
+
+By incorporating unit tests, this project guarantees that changes to the list’s implementation do not introduce regressions. Therefore, I believe that working with unit tests was very useful for me, as it helped me to understand more deeply the principles of unit testing, structuring the code and ensuring its reliability. During refactoring, I was able to make sure that the changes did not break the existing functionality, and I also learned to quickly find and fix errors.
