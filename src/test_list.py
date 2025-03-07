@@ -29,4 +29,23 @@ class TestListMethods(unittest.TestCase):
         self.lst.append('b')
         self.assertEqual(self.lst.get(0), 'a')
         self.assertEqual(self.lst.get(1), 'b')
-    
+
+    def test_insert_empty(self):
+        """Checks for insertion of an element into the correct position of an empty list."""
+        self.lst.insert('b', 0)
+        self.assertEqual(self.lst.get(0), 'b')
+
+    def test_insert_nonempty(self):
+        """Checks for insertion of an element into the correct position of a populated list."""
+        self.lst.append('a')
+        self.lst.append('c')
+        self.lst.insert('b', 1)
+
+        self.assertEqual(self.lst.get(0), 'a')
+        self.assertEqual(self.lst.get(1), 'b')
+        self.assertEqual(self.lst.get(2), 'c')
+
+    def test_insert_invalid_index(self):
+        """Checks that an error occurs if the index is incorrect."""
+        with self.assertRaises(IndexError):
+            self.lst.insert('x', 5)
