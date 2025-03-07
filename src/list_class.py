@@ -103,7 +103,7 @@ class List:
                 current = current.next
 
     def get(self, index: int) -> chr:
-        if self.head is None:
+        if self.head is None or index < 0:
             raise IndexError("Index out of range")
 
         current = self.head
