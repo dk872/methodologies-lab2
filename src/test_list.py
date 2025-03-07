@@ -49,3 +49,25 @@ class TestListMethods(unittest.TestCase):
         """Checks that an error occurs if the index is incorrect."""
         with self.assertRaises(IndexError):
             self.lst.insert('x', 5)
+
+    def test_delete_valid_index(self):
+        """Checks for deletion of an element at a correct index."""
+        self.lst.append('a')
+        self.lst.append('b')
+        removed = self.lst.delete(0)
+
+        self.assertEqual(removed, 'a')
+        self.assertEqual(self.lst.get(0), 'b')
+
+    def test_delete_empty(self):
+        """Checks for an error call when trying to remove an item from an empty list."""
+        with self.assertRaises(IndexError):
+            self.lst.delete(0)
+
+    def test_delete_invalid_index(self):
+        """Checks for an error call when attempting to delete an element with an incorrect index."""
+        self.lst.append('a')
+        self.lst.append('b')
+        with self.assertRaises(IndexError):
+            self.lst.delete(2)
+            
