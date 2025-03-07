@@ -172,7 +172,7 @@ class List:
         return last_index
 
     def clear(self) -> None:
-        self.data.clear()
+        self.head = None
 
     def extend(self, elements: "List") -> None:
         self.data.extend(elements.data.copy())

@@ -206,7 +206,7 @@ class TestList(unittest.TestCase):
         self.lst.append('c')
         self.assertEqual(self.lst.find_last('b'), -1)
 
-    '''def test_clear_nonempty(self):
+    def test_clear_nonempty(self):
         """Checks that the list is cleared correctly."""
         self.lst.append('a')
         self.lst.append('b')
@@ -218,7 +218,7 @@ class TestList(unittest.TestCase):
         self.lst.clear()
         self.assertEqual(self.lst.length(), 0)
 
-    def test_extend(self):
+    '''def test_extend(self):
         """Checks that a list is properly extended by another list and that changes
         to the second list do not affect the first."""
         another_list = List()
