@@ -146,7 +146,7 @@ class TestList(unittest.TestCase):
         self.assertEqual(self.lst.get(2), 'x')
         self.assertEqual(self.lst.get(3), 'y')
 
-    '''def test_reverse_nonempty(self):
+    def test_reverse_nonempty(self):
         """Checks that the list is correctly reversed."""
         self.lst.append('c')
         self.lst.append('b')
@@ -162,7 +162,7 @@ class TestList(unittest.TestCase):
         self.lst.reverse()
         self.assertEqual(self.lst.length(), 0)
 
-    def test_find_first_two_elements(self):
+    '''def test_find_first_two_elements(self):
         """Checks for the first occurrence of an element when there are two such elements in the list."""
         self.lst.append('a')
         self.lst.append('b')

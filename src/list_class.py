@@ -118,7 +118,23 @@ class List:
         return new_list
 
     def reverse(self) -> None:
-        self.data.reverse()
+        if not self.head or self.head.next == self.head:
+            return
+
+        prev = None
+        current = self.head
+        first = self.head
+
+        while True:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+            if current == first:
+                break
+
+        self.head.next = prev
+        self.head = prev
 
     def find_first(self, element: chr) -> int:
         try:
