@@ -9,7 +9,14 @@ class List:
         self.head = None
 
     def length(self) -> int:
-        return len(self.data)
+        if not self.head:
+            return 0
+        count = 1
+        current = self.head
+        while current.next != self.head:
+            count += 1
+            current = current.next
+        return count
 
     def append(self, element: chr) -> None:
         new_node = Node(element)
