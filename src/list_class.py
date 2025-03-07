@@ -1,6 +1,12 @@
+class Node:
+    def __init__(self, value: chr):
+        self.value = value
+        self.next = None
+
+
 class List:
     def __init__(self):
-        self.data = []
+        self.head = None
 
     def length(self) -> int:
         return len(self.data)
