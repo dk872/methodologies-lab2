@@ -5,9 +5,12 @@ This project implements a list based on Python's built-in lists and a singly lin
 
 ## Calculation of the variant number
 Record book number - **3214**.
+
 Variant number = 3214 mod 4 = **2**.
 
+
 The initial implementation of a list is a *list based on built-in arrays/lists*.
+
 The second implementation of a list is a *singly linked circular list*.
 
 ## Running the program
@@ -66,3 +69,6 @@ Unit tests play a crucial role in software development by:
   - **Improving Maintainability**
 
 By incorporating unit tests, this project guarantees that changes to the list’s implementation do not introduce regressions. Therefore, I believe that working with unit tests was very useful for me, as it helped me to understand more deeply the principles of unit testing, structuring the code and ensuring its reliability. During refactoring, I was able to make sure that the changes did not break the existing functionality, and I also learned to quickly find and fix errors.
+
+## Author info
+Dmytro Kulyk, a student of group IM-32
