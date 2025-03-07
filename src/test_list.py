@@ -119,4 +119,30 @@ class TestListMethods(unittest.TestCase):
         self.lst.append('b')
         with self.assertRaises(IndexError):
             self.lst.get(3)
-            
+
+    def test_clone(self):
+        """Checks that cloning creates a new list with the same contents and
+        changes to the original list do not affect the cloned one."""
+        self.lst.append('a')
+        self.lst.append('b')
+        self.lst.append('c')
+        cloned_list = self.lst.clone()
+
+        self.assertEqual(cloned_list.get(0), 'a')
+        self.assertEqual(cloned_list.get(1), 'b')
+        self.assertEqual(cloned_list.get(2), 'c')
+        self.assertIsNot(cloned_list, self.lst)
+
+        self.lst.append('x')
+        self.lst.append('y')
+        self.lst.delete(0)
+
+        self.assertEqual(cloned_list.get(0), 'a')
+        self.assertEqual(cloned_list.get(1), 'b')
+        self.assertEqual(cloned_list.get(2), 'c')
+
+        self.assertEqual(self.lst.get(0), 'b')
+        self.assertEqual(self.lst.get(1), 'c')
+        self.assertEqual(self.lst.get(2), 'x')
+        self.assertEqual(self.lst.get(3), 'y')
+        
