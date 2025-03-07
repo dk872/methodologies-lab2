@@ -22,3 +22,11 @@ class TestListMethods(unittest.TestCase):
         self.lst.append('b')
         self.lst.delete(0)
         self.assertEqual(self.lst.length(), 1)
+
+    def test_append(self):
+        """Checks that items are added to the list."""
+        self.lst.append('a')
+        self.lst.append('b')
+        self.assertEqual(self.lst.get(0), 'a')
+        self.assertEqual(self.lst.get(1), 'b')
+    
