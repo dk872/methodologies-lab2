@@ -71,7 +71,7 @@ class TestList(unittest.TestCase):
         with self.assertRaises(IndexError):
             self.lst.delete(2)
 
-    '''def test_delete_all_two_elements(self):
+    def test_delete_all_two_elements(self):
         """Checks for deletion of all occurrences of two elements in a non-empty list."""
         self.lst.append('a')
         self.lst.append('b')
@@ -98,7 +98,7 @@ class TestList(unittest.TestCase):
 
         self.assertEqual(self.lst.get(0), 'c')
         self.assertEqual(self.lst.get(1), 'a')
-        self.assertEqual(self.lst.get(2), 'a')'''
+        self.assertEqual(self.lst.get(2), 'a')
 
     def test_get_nonempty(self):
         """Checks for getting of an element into the correct position of a non-empty list."""

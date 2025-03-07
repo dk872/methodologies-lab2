@@ -85,7 +85,22 @@ class List:
         return removed_value
 
     def delete_all(self, element: chr) -> None:
-        self.data = [e for e in self.data if e != element]
+        if not self.head:
+            return
+
+        while self.head and self.head.value == element:
+            if self.head.next == self.head:
+                self.head = None
+                return
+            self.head = self.head.next
+
+        current = self.head
+
+        while current and current.next != self.head:
+            if current.next.value == element:
+                current.next = current.next.next
+            else:
+                current = current.next
 
     def get(self, index: int) -> chr:
         if self.head is None:
