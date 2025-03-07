@@ -105,7 +105,16 @@ class List:
 
     def clone(self) -> "List":
         new_list = List()
-        new_list.data = self.data.copy()
+        if not self.head:
+            return new_list
+
+        current = self.head
+        while True:
+            new_list.append(current.value)
+            current = current.next
+            if current == self.head:
+                break
+
         return new_list
 
     def reverse(self) -> None:

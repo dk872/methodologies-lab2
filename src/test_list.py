@@ -120,7 +120,7 @@ class TestList(unittest.TestCase):
         with self.assertRaises(IndexError):
             self.lst.get(3)
 
-    '''def test_clone(self):
+    def test_clone(self):
         """Checks that cloning creates a new list with the same contents and
         changes to the original list do not affect the cloned one."""
         self.lst.append('a')
@@ -146,7 +146,7 @@ class TestList(unittest.TestCase):
         self.assertEqual(self.lst.get(2), 'x')
         self.assertEqual(self.lst.get(3), 'y')
 
-    def test_reverse_nonempty(self):
+    '''def test_reverse_nonempty(self):
         """Checks that the list is correctly reversed."""
         self.lst.append('c')
         self.lst.append('b')
