@@ -205,4 +205,16 @@ class TestListMethods(unittest.TestCase):
         self.lst.append('a')
         self.lst.append('c')
         self.assertEqual(self.lst.find_last('b'), -1)
+
+    def test_clear_nonempty(self):
+        """Checks that the list is cleared correctly."""
+        self.lst.append('a')
+        self.lst.append('b')
+        self.lst.clear()
+        self.assertEqual(self.lst.length(), 0)
+
+    def test_clear_empty(self):
+        """Checks that nothing happens with an empty list."""
+        self.lst.clear()
+        self.assertEqual(self.lst.length(), 0)
         
