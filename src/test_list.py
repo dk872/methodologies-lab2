@@ -161,4 +161,26 @@ class TestListMethods(unittest.TestCase):
         """Checks that nothing happens with an empty list."""
         self.lst.reverse()
         self.assertEqual(self.lst.length(), 0)
+
+    def test_find_first_two_elements(self):
+        """Checks for the first occurrence of an element when there are two such elements in the list."""
+        self.lst.append('a')
+        self.lst.append('b')
+        self.lst.append('c')
+        self.lst.append('b')
+        self.assertEqual(self.lst.find_first('b'), 1)
+
+    def test_find_first_one_element(self):
+        """Checks for the first occurrence of an element when there is only one such element in the list."""
+        self.lst.append('a')
+        self.lst.append('b')
+        self.lst.append('c')
+        self.lst.append('b')
+        self.assertEqual(self.lst.find_first('c'), 2)
+
+    def test_find_first_no_element(self):
+        """Checks that if the element is not found, -1 is returned."""
+        self.lst.append('a')
+        self.lst.append('c')
+        self.assertEqual(self.lst.find_first('b'), -1)
         
