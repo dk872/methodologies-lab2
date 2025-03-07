@@ -36,9 +36,32 @@ class List:
         self.data.insert(index, element)
 
     def delete(self, index: int) -> chr:
-        if not (0 <= index < len(self.data)):
+        if index < 0 or index >= self.length():
             raise IndexError("Index out of range")
-        return self.data.pop(index)
+
+        current = self.head
+
+        if index == 0:
+            if self.head.next == self.head:
+                removed_value = self.head.value
+                self.head = None
+                return removed_value
+
+            while current.next != self.head:
+                current = current.next
+            removed_value = self.head.value
+            current.next = self.head.next
+            self.head = self.head.next
+            return removed_value
+
+        prev = None
+        for _ in range(index):
+            prev = current
+            current = current.next
+
+        removed_value = current.value
+        prev.next = current.next
+        return removed_value
 
     def delete_all(self, element: chr) -> None:
         self.data = [e for e in self.data if e != element]

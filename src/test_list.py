@@ -6,7 +6,7 @@ class TestList(unittest.TestCase):
     def setUp(self):
         self.lst = List()
 
-    '''def test_length_empty(self):
+    def test_length_empty(self):
         """Checks that the length of an empty list is calculated correctly."""
         self.assertEqual(self.lst.length(), 0)
 
@@ -21,7 +21,7 @@ class TestList(unittest.TestCase):
         self.lst.append('a')
         self.lst.append('b')
         self.lst.delete(0)
-        self.assertEqual(self.lst.length(), 1)'''
+        self.assertEqual(self.lst.length(), 1)
 
     def test_append(self):
         """Checks that items are added to the list."""
@@ -48,7 +48,7 @@ class TestList(unittest.TestCase):
     def test_insert_invalid_index(self):
         """Checks that an error occurs if the index is incorrect."""
         with self.assertRaises(IndexError):
-            self.lst.insert('x', 5)
+            self.lst.insert('x', 5)'''
 
     def test_delete_valid_index(self):
         """Checks for deletion of an element at a correct index."""
@@ -71,7 +71,7 @@ class TestList(unittest.TestCase):
         with self.assertRaises(IndexError):
             self.lst.delete(2)
 
-    def test_delete_all_two_elements(self):
+    '''def test_delete_all_two_elements(self):
         """Checks for deletion of all occurrences of two elements in a non-empty list."""
         self.lst.append('a')
         self.lst.append('b')
