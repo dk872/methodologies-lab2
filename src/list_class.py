@@ -12,7 +12,16 @@ class List:
         return len(self.data)
 
     def append(self, element: chr) -> None:
-        self.data.append(element)
+        new_node = Node(element)
+        if not self.head:
+            self.head = new_node
+            self.head.next = self.head
+        else:
+            current = self.head
+            while current.next != self.head:
+                current = current.next
+            current.next = new_node
+            new_node.next = self.head
 
     def insert(self, element: chr, index: int) -> None:
         if not (0 <= index <= len(self.data)):
