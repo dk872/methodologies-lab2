@@ -145,4 +145,20 @@ class TestListMethods(unittest.TestCase):
         self.assertEqual(self.lst.get(1), 'c')
         self.assertEqual(self.lst.get(2), 'x')
         self.assertEqual(self.lst.get(3), 'y')
+
+    def test_reverse_nonempty(self):
+        """Checks that the list is correctly reversed."""
+        self.lst.append('c')
+        self.lst.append('b')
+        self.lst.append('b')
+        self.lst.reverse()
+
+        self.assertEqual(self.lst.get(0), 'b')
+        self.assertEqual(self.lst.get(1), 'b')
+        self.assertEqual(self.lst.get(2), 'c')
+
+    def test_reverse_empty(self):
+        """Checks that nothing happens with an empty list."""
+        self.lst.reverse()
+        self.assertEqual(self.lst.length(), 0)
         
