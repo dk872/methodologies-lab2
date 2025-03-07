@@ -137,10 +137,21 @@ class List:
         self.head = prev
 
     def find_first(self, element: chr) -> int:
-        try:
-            return self.data.index(element)
-        except ValueError:
+        if not self.head:
             return -1
+
+        current = self.head
+        index = 0
+
+        while True:
+            if current.value == element:
+                return index
+            current = current.next
+            index += 1
+            if current == self.head:
+                break
+
+        return -1
 
     def find_last(self, element: chr) -> int:
         for i in range(len(self.data) - 1, -1, -1):
