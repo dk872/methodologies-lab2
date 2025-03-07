@@ -99,4 +99,24 @@ class TestListMethods(unittest.TestCase):
         self.assertEqual(self.lst.get(0), 'c')
         self.assertEqual(self.lst.get(1), 'a')
         self.assertEqual(self.lst.get(2), 'a')
-        
+
+    def test_get_nonempty(self):
+        """Checks for getting of an element into the correct position of a non-empty list."""
+        self.lst.append('a')
+        self.lst.append('x')
+        self.lst.append('b')
+        self.assertEqual(self.lst.get(1), 'x')
+
+    def test_get_empty(self):
+        """Checks that an error occurs if the list is empty."""
+        with self.assertRaises(IndexError):
+            self.lst.get(0)
+
+    def test_get_invalid_index(self):
+        """Checks that an error occurs if the index is incorrect."""
+        self.lst.append('a')
+        self.lst.append('x')
+        self.lst.append('b')
+        with self.assertRaises(IndexError):
+            self.lst.get(3)
+            
