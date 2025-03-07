@@ -154,10 +154,22 @@ class List:
         return -1
 
     def find_last(self, element: chr) -> int:
-        for i in range(len(self.data) - 1, -1, -1):
-            if self.data[i] == element:
-                return i
-        return -1
+        if not self.head:
+            return -1
+
+        current = self.head
+        last_index = -1
+        count = 0
+
+        while True:
+            if current.value == element:
+                last_index = count
+            current = current.next
+            count += 1
+            if current == self.head:
+                break
+
+        return last_index
 
     def clear(self) -> None:
         self.data.clear()

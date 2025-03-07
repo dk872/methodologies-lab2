@@ -184,7 +184,7 @@ class TestList(unittest.TestCase):
         self.lst.append('c')
         self.assertEqual(self.lst.find_first('b'), -1)
 
-    '''def test_find_last_two_elements(self):
+    def test_find_last_two_elements(self):
         """Checks for the last occurrence of an element when there are two such elements in the list."""
         self.lst.append('a')
         self.lst.append('b')
@@ -206,7 +206,7 @@ class TestList(unittest.TestCase):
         self.lst.append('c')
         self.assertEqual(self.lst.find_last('b'), -1)
 
-    def test_clear_nonempty(self):
+    '''def test_clear_nonempty(self):
         """Checks that the list is cleared correctly."""
         self.lst.append('a')
         self.lst.append('b')
