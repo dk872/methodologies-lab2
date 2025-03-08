@@ -1,6 +1,6 @@
-# Linked List Implementation with Unit Tests
+# Linked List Implementation
 
-## Decription
+## Description
 This project implements a list based on Python's built-in lists and a singly linked circular list in Python without using built-in collections. They include fundamental operations such as appending, inserting, deleting, reversing, and searching within the list. The implementation is accompanied by a unit test suite to ensure reliability and correctness. GitHub Actions are configured to automatically run tests.
 
 ## Calculation of the variant number
@@ -66,7 +66,7 @@ This project demonstrates the implementations of a list based on built-in arrays
 Unit tests play a crucial role in software development by:
   - **Ensuring code reliability**
   - **Facilitating refactoring**
-  - **Improving Maintainability**
+  - **Improving maintainability**
 
 By incorporating unit tests, this project guarantees that changes to the list’s implementation do not introduce regressions. Therefore, I believe that working with unit tests was very useful for me, as it helped me to understand more deeply the principles of unit testing, structuring the code and ensuring its reliability. During refactoring, I was able to make sure that the changes did not break the existing functionality, and I also learned to quickly find and fix errors.
 
